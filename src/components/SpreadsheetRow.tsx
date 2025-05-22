@@ -10,8 +10,8 @@ type SpreadsheetRowProps = {
 };
 
 const SpreadsheetRow = ({ rowNumber, highlightCell, className, style }: SpreadsheetRowProps) => {
-  // Create 11 cells for each row (same as the number of headers)
-  const cells = Array(11).fill(null);
+  // Create 10 cells for each row (same as the number of headers)
+  const cells = Array(10).fill(null);
 
   return (
     <div className={cn("flex border-b", className)} style={style}>
