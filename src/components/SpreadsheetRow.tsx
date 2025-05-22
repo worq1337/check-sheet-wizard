@@ -5,14 +5,16 @@ import { cn } from "@/lib/utils";
 type SpreadsheetRowProps = {
   rowNumber: number;
   highlightCell?: {row: number, col: number};
+  className?: string;
+  style?: React.CSSProperties;
 };
 
-const SpreadsheetRow = ({ rowNumber, highlightCell }: SpreadsheetRowProps) => {
+const SpreadsheetRow = ({ rowNumber, highlightCell, className, style }: SpreadsheetRowProps) => {
   // Create 11 cells for each row (same as the number of headers)
   const cells = Array(11).fill(null);
 
   return (
-    <div className="flex border-b">
+    <div className={cn("flex border-b", className)} style={style}>
       <div className="w-12 border-r flex items-center justify-center py-2 text-sm text-gray-500">
         {rowNumber}
       </div>
