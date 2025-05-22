@@ -10,19 +10,22 @@ type SpreadsheetRowProps = {
 };
 
 const SpreadsheetRow = ({ rowNumber, highlightCell, className, style }: SpreadsheetRowProps) => {
-  // Create 10 cells for each row (same as the number of headers)
-  const cells = Array(10).fill(null);
+  // Column widths matching header
+  const columnWidths = [
+    "w-16", "w-24", "w-20", "w-40", 
+    "w-32", "w-24", "w-24", "w-12", "w-16"
+  ];
 
   return (
     <div className={cn("flex border-b", className)} style={style}>
       <div className="w-12 border-r flex items-center justify-center py-2 text-sm text-gray-500">
         {rowNumber}
       </div>
-      {cells.map((_, index) => (
+      {columnWidths.map((width, index) => (
         <div 
           key={`cell-${rowNumber}-${index}`} 
           className={cn(
-            "flex-1 min-w-[60px] border-r py-2 px-1",
+            `${width} min-w-[60px] border-r py-2 px-1`,
             highlightCell && highlightCell.row === rowNumber && highlightCell.col === index 
               ? "border-2 border-green-500" 
               : ""
