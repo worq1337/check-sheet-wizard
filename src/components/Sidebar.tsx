@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Import, Export, Settings, Trash, LayoutDashboard } from "lucide-react";
+import { FileImport, FileExport, Settings, Trash, LayoutDashboard } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type NavItem = {
@@ -12,8 +12,8 @@ type NavItem = {
 const Sidebar = () => {
   const navItems: NavItem[] = [
     { icon: LayoutDashboard, label: "Обзор", active: true },
-    { icon: Import, label: "Импорт" },
-    { icon: Export, label: "Экспорт" },
+    { icon: FileImport, label: "Импорт" },
+    { icon: FileExport, label: "Экспорт" },
     { icon: Trash, label: "Удалить" },
   ];
 
